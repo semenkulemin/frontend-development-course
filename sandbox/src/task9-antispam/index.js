@@ -7,5 +7,7 @@
  * @returns {Boolean}
  */
 export const isSpam = (text, keywords) => {
-    // ваш код здесь
+    const text_array = text.split(/[^a-z]+/i).filter(Boolean)
+    const filteredArray = text_array.filter(value => keywords.includes(value))
+    return filteredArray.length != 0
 };
